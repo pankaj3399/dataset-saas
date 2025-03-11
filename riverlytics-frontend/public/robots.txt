@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://Riverlytics-astro.web3templates.com//sitemap-index.xml
