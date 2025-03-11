@@ -20,12 +20,11 @@ connectDB();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: "*" ,
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: 'https://dataset-saas-rose.vercel.app',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(helmet()); // Security headers
 app.use(morgan("dev")); // Logging
 
