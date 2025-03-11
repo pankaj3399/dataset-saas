@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "https://dataset-saas-rose.vercel.app/" || "http://localhost:3000",
+    origin: "https://dataset-saas-rose.vercel.app",
     credentials: true,
   })
 );
