@@ -14,10 +14,10 @@
     "@tailwindcss/typography": "^0.5.16",
     "axios": "^1.8.2",
     "firebase": "^11.4.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "react-helmet-async": "^2.0.4",
+    "react-helmet-async": "^2.0.5",
     "react-router-dom": "^7.3.0",
     "riverlytics": "file:",
     "tailwindcss": "^3.3.5"
