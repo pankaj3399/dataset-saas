@@ -31,6 +31,8 @@ VITE_API_URL=https://your-backend-name.vercel.app/api
 
 ### 1. Prepare Your Express App for Vercel
 
+Create a vercel.json (if there is no file) and ensure the contents match with the following snippet
+
 ```json
 {
   "version": 2,
@@ -76,6 +78,8 @@ app.use(
 5. Add environment variables if needed take reference from .env.example
 
 ```
+PORT=5000
+
 # MongoDB Configuration
 MONGO_URI= <your-db-url>
 
