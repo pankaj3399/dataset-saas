@@ -14,12 +14,12 @@ import {
 
 // Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAKuWFOKAUBfanYLuW5F0BaY3CHqeEFHH4",
-  authDomain: "riverytics.firebaseapp.com",
-  projectId: "riverytics",
-  storageBucket: "riverytics.firebasestorage.app",
-  messagingSenderId: "45456910880",
-  appId: "1:45456910880:web:a36e5ba85f55f371546a45",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase

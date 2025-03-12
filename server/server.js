@@ -20,13 +20,14 @@ connectDB();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(
-//   cors({
-//     origin: ["https://dataset-saas-rose.vercel.app", "http://localhost:5173"],
-//     methods: ["GET", "POST", "OPTIONS"],
-//     allowedHeaders: ["Content-Type", "Authorization"],
-//   })
-// );
+app.use(
+  cors({
+    // origin: ["https://dataset-saas-rose.vercel.app", "http://localhost:5173"],
+    origin:"*",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(helmet()); // Security headers
 app.use(morgan("dev")); // Logging
 
