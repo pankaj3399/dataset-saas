@@ -32,76 +32,125 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Reset your password
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Enter your email address and we'll send you a link to reset your
-            password
-          </p>
+    <div className="bg-primary-soft flex flex-1 flex-col justify-center relative overflow-hidden min-h-screen">
+      {/* Background decorative element */}
+      <div className="absolute top-10 right-20 opacity-60">
+        <svg
+          width="704"
+          height="854"
+          viewBox="0 0 704 854"
+          fill="none"
+          className="text-primary-accent"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="352"
+            cy="352"
+            r="352"
+            fill="url(#paint0_linear_51_188)"
+          ></circle>
+          <circle
+            cx="496.982"
+            cy="646.982"
+            r="169"
+            transform="rotate(-75 496.982 646.982)"
+            fill="url(#paint1_linear_51_188)"
+          ></circle>
+          <defs>
+            <linearGradient
+              id="paint0_linear_51_188"
+              x1="623.047"
+              y1="106.25"
+              x2="352.723"
+              y2="542.094"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0.113181" stopColor="currentColor"></stop>
+              <stop offset="1" stopColor="currentColor" stopOpacity="0"></stop>
+            </linearGradient>
+            <linearGradient
+              id="paint1_linear_51_188"
+              x1="627.115"
+              y1="528.994"
+              x2="497.329"
+              y2="738.249"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset="0.113181" stopColor="currentColor"></stop>
+              <stop offset="1" stopColor="currentColor" stopOpacity="0"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 z-10 relative">
+        <div className="max-w-lg flex justify-center mx-auto">
+          <Link to="/" className="text-lg">
+            <span className="font-bold text-primary-strong text-3xl">
+              Riverlytics
+            </span>
+          </Link>
         </div>
 
-        {error && (
-          <div
-            className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
-            role="alert"
-          >
-            <span className="block sm:inline">{error}</span>
+        <div className="bg-white max-w-lg shadow-xl p-10 rounded-md flex flex-col my-8 mx-auto">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold">Reset Your Password</h1>
+            <p className="text-default text-sm mt-2">
+              Enter your email address, and we'll send you a link to reset your
+              password.
+            </p>
           </div>
-        )}
 
-        {message && (
-          <div
-            className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"
-            role="alert"
-          >
-            <span className="block sm:inline">{message}</span>
-          </div>
-        )}
+          {error && (
+            <div
+              className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4"
+              role="alert"
+            >
+              <span className="block sm:inline">{error}</span>
+            </div>
+          )}
 
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="email-address" className="sr-only">
-                Email address
+          {message && (
+            <div
+              className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mt-4"
+              role="alert"
+            >
+              <span className="block sm:inline">{message}</span>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-6">
+            <div className="flex flex-col">
+              <label htmlFor="email" className="text-sm sr-only">
+                Email
               </label>
               <input
-                id="email-address"
-                name="email"
                 type="email"
-                autoComplete="email"
-                required
-                className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
-                placeholder="Email address"
+                id="email"
+                placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="border border-default-soft/30 placeholder:text-sm placeholder:text-default rounded-md px-3 py-2.5 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
               />
             </div>
-          </div>
 
-          <div>
             <button
               type="submit"
               disabled={loading}
-              className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ${
-                loading ? "opacity-50 cursor-not-allowed" : ""
-              }`}
+              className="bg-primary text-white rounded-md font-semibold px-2 py-3.5 hover:bg-primary-strong disabled:opacity-50 disabled:cursor-not-allowed mt-4"
             >
               {loading ? "Sending..." : "Reset Password"}
             </button>
-          </div>
-        </form>
+          </form>
 
-        <div className="text-center mt-4">
-          <Link
-            to="/login"
-            className="font-medium text-blue-600 hover:text-blue-500"
-          >
-            Back to login
-          </Link>
+          <div className="text-center mt-4">
+            <Link
+              to="/login"
+              className="font-medium text-primary hover:underline"
+            >
+              Back to login
+            </Link>
+          </div>
         </div>
       </div>
     </div>
